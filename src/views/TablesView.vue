@@ -29,9 +29,9 @@ import CardBoxComponentEmpty from "@/components/CardBoxComponentEmpty.vue";
           small
         />
       </SectionTitleLineWithButton>
-      <NotificationBar color="info" :icon="mdiMonitorCellphone">
+      <!-- <NotificationBar color="info" :icon="mdiMonitorCellphone">
         <b>Responsive table.</b> Collapses on mobile
-      </NotificationBar>
+      </NotificationBar> -->
 
       <CardBox class="mb-6" has-table>
         <TableSampleClients checkable />
