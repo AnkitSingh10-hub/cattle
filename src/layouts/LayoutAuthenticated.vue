@@ -97,13 +97,13 @@ const menuClick = (event: MouseEvent, item: MenuItem) => {
       />
       <slot />
       <FooterBar>
-        Get more with
+        Buy app
         <a
           href="https://github.com/Chanzhaoyu/admin-one-vue"
           target="_blank"
           class="text-blue-600"
         >
-          Github
+          Cattle Data Collection
         </a>
       </FooterBar>
     </div>
