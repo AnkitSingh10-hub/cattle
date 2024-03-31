@@ -5,8 +5,8 @@ import type { QTablePagination, PageFilter } from '../models/page.interface'
 import type { Query } from '../models/page.interface'
 import API from '@/api/income'
 import { queryBuilder } from '@/utils/api.utils'
-export const useFarmerStore = defineStore({
-  id: 'useFarmerStore',
+export const useIncomeStore = defineStore({
+  id: 'useIncomeStore',
   state: () => ({
     PaginatedIncome: {} as PaginatedIncome,
     IncomeDetail: {} as Income,
@@ -27,8 +27,8 @@ export const useFarmerStore = defineStore({
 
     async getIncome(params: PageFilter = {}) {
       const query = queryBuilder(params as Query)
-      const farmer = (await API.getIncome(query)) as PaginatedIncome
-      this.PaginatedIncome = farmer
+      const income = (await API.getIncome(query)) as PaginatedIncome
+      this.PaginatedIncome = income
     },
  
 
