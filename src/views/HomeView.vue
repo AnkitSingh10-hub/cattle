@@ -124,11 +124,12 @@ const transactionBarItems = computed(() => mainStore.history);
         />
       </SectionTitleLineWithButton>
 
-      <CardBox class="mb-6">
+      <!-- <CardBox class="mb-6">
         <div v-if="chartData">
           <line-chart :data="chartData" class="h-96" />
         </div>
-      </CardBox>
+      </CardBox> -->
+      
 
       <SectionTitleLineWithButton :icon="mdiAccountMultiple" title="Clients" />
 

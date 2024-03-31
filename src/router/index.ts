@@ -1,5 +1,10 @@
 import type { RouteRecordRaw } from "vue-router";
-import { createRouter, createWebHashHistory } from "vue-router";
+import {
+  createRouter,
+  createWebHistory,
+  type NavigationGuardNext,
+  type RouteLocationNormalized
+} from 'vue-router'
 import Style from "@/views/StyleView.vue";
 import Home from "@/views/HomeView.vue";
 
@@ -29,6 +34,14 @@ const routes: RouteRecordRaw[] = [
     path: "/tables",
     name: "tables",
     component: () => import("@/views/TablesView.vue"),
+  },
+  {
+    meta: {
+      title: "IncomeList",
+    },
+    path: "/income",
+    name: "income",
+    component: () => import("@/views/economic/IncomeListView.vue"),
   },
   {
     meta: {
@@ -81,7 +94,7 @@ const routes: RouteRecordRaw[] = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     return savedPosition || { top: 0 };

@@ -81,11 +81,18 @@ const menuAside: MenuItem[] = [
     ],
   },
   {
-    href: "https://github.com/Chanzhaoyu/admin-one-vue",
-    label: "GitHub",
-    icon: mdiGithub,
-    target: "_blank",
+    label: "Dropdown",
+    icon: mdiViewList,
+    menu: [
+      {
+        label: "Item One",
+      },
+      {
+        label: "Item Two",
+      },
+    ],
   },
+ 
 ];
 
 export default menuAside;
