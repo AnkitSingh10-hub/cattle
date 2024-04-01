@@ -25,3 +25,16 @@ export interface PaginatedMilkProduction extends Page{
     total_milk_sold: number;
   }
   
+  export interface PaginatedMilkContent extends Page {
+    results: MilkContent[];
+  }
+  export interface MilkContent {
+    id: number;
+    user: string;
+    date_analysis: string;
+    fat: number;
+    protein: number;
+    snf: number;
+    conductivity: number;
+  }
+  

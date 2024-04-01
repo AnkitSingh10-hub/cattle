@@ -2,7 +2,7 @@
 <template>
     <LayoutAuthenticated>
       <SectionMain>
-        <SectionTitleLineWithButton :icon="mdiCurrencyUsd" title="Milk production" main>
+        <SectionTitleLineWithButton :icon="mdiFoodTakeoutBoxOutline" title="Milk production" main>
          
         </SectionTitleLineWithButton>
         
@@ -68,7 +68,8 @@
     mdiTableBorder,
     mdiTableOff,
     mdiGithub,
-    mdiCurrencyUsd
+    mdiCurrencyUsd,
+    mdiFoodTakeoutBoxOutline 
   } from "@mdi/js";
   import SectionMain from "@/components/SectionMain.vue";
   import NotificationBar from "@/components/NotificationBar.vue";

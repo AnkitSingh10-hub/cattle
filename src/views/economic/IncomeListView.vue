@@ -2,7 +2,7 @@
 <template>
   <LayoutAuthenticated>
     <SectionMain>
-      <SectionTitleLineWithButton :icon="mdiCurrencyUsd" title="Income" main>
+      <SectionTitleLineWithButton :icon="mdiCashMultiple" title="Income" main>
       
       </SectionTitleLineWithButton>
       
@@ -68,7 +68,8 @@ import {
   mdiTableBorder,
   mdiTableOff,
   mdiGithub,
-  mdiCurrencyUsd
+  mdiCurrencyUsd,
+  mdiCashMultiple
 } from "@mdi/js";
 import SectionMain from "@/components/SectionMain.vue";
 import NotificationBar from "@/components/NotificationBar.vue";

@@ -55,11 +55,15 @@ const menuAside: MenuItem[] = [
     menu: [
       {
         to: "/milk-production",
-        label: "Milk Production",
+        label: "Milk production",
       },
       {
         to: "/milk-sold",
-        label: "Milk Sold",
+        label: "Milk sold",
+      },
+      {
+        to: "/milk-content",
+        label: "Milk content",
       }
     ],
   },

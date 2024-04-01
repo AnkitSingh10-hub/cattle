@@ -2,7 +2,7 @@
 <template>
     <LayoutAuthenticated>
       <SectionMain>
-        <SectionTitleLineWithButton :icon="mdiCurrencyUsd" title="Expenses" main>
+        <SectionTitleLineWithButton :icon="mdiCreditCard" title="Expenses" main>
           
         </SectionTitleLineWithButton>
         
@@ -68,7 +68,8 @@
     mdiTableBorder,
     mdiTableOff,
     mdiGithub,
-    mdiCurrencyUsd
+    mdiCurrencyUsd,
+    mdiCreditCard 
   } from "@mdi/js";
   
   import SectionMain from "@/components/SectionMain.vue";
