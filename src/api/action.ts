@@ -11,5 +11,5 @@ export enum Action {
   
   MilkProduction ='analysis/milk-production',
   MilkContent ='analysis/milk-content',
-  MilkSold ='analysis/milk-sold/',
+  MilkSold ='analysis/milk-sold',
 }

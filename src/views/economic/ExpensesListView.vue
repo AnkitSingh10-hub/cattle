@@ -2,16 +2,8 @@
 <template>
     <LayoutAuthenticated>
       <SectionMain>
-        <SectionTitleLineWithButton :icon="mdiCurrencyUsd" title="Expenses list" main>
-          <BaseButton
-            href="https://github.com/justboil/admin-one-vue-tailwind"
-            target="_blank"
-            :icon="mdiGithub"
-            label="Star on GitHub"
-            color="contrast"
-            rounded-full
-            small
-          />
+        <SectionTitleLineWithButton :icon="mdiCurrencyUsd" title="Expenses" main>
+          
         </SectionTitleLineWithButton>
         
   

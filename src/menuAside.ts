@@ -10,7 +10,8 @@ import {
   mdiTelevisionGuide,
   mdiResponsive,
   mdiPalette,
-  mdiCurrencyUsd
+  mdiCurrencyUsd,
+  mdiCup
 } from "@mdi/js";
 
 export interface MenuItem {
@@ -46,6 +47,20 @@ const menuAside: MenuItem[] = [
         to: "/expenses",
         label: "Expenses",
       },
+    ],
+  },
+  {
+    label: "Milk",
+    icon: mdiCup,
+    menu: [
+      {
+        to: "/milk-production",
+        label: "Milk Production",
+      },
+      {
+        to: "/milk-sold",
+        label: "Milk Sold",
+      }
     ],
   },
   

@@ -63,15 +63,7 @@ const formStatusSubmit = () => {
         title="Forms example"
         main
       >
-        <BaseButton
-          href="https://github.com/Chanzhaoyu/admin-one-vue"
-          target="_blank"
-          :icon="mdiGithub"
-          label="Star on GitHub"
-          color="contrast"
-          rounded-full
-          small
-        />
+        
       </SectionTitleLineWithButton>
       <CardBox form @submit.prevent="submit">
         <FormField label="Grouped with icons">
