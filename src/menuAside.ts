@@ -34,6 +34,20 @@ const menuAside: MenuItem[] = [
     label: "Tables",
     icon: mdiTable,
   },
+  {
+    label: "Economic",
+    icon: mdiCurrencyUsd,
+    menu: [
+      {
+        to: "/income",
+        label: "Income",
+      },
+      {
+        to: "/expenses",
+        label: "Expenses",
+      },
+    ],
+  },
   
   {
     to: "/forms",
@@ -70,22 +84,7 @@ const menuAside: MenuItem[] = [
     label: "Error",
     icon: mdiAlertCircle,
   },
-  {
-    label: "Economic",
-    icon: mdiCurrencyUsd,
-    menu: [
-      {
-        to: "/income",
-        label: "Income",
-      },
-      {
-        to: "/expenses",
-        label: "Expenses",
-      },
-    ],
-  },
-
- 
+   
 ];
 
 export default menuAside;

@@ -7,4 +7,9 @@ export enum Action {
 
   Income ='economic/income',
   Expenses ='economic/expenses',
+
+  
+  MilkProduction ='analysis/milk-production',
+  MilkContent ='analysis/milk-content',
+  MilkSold ='analysis/milk-sold/',
 }
