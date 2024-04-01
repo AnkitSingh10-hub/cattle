@@ -1,15 +1,13 @@
 import { Page } from "./page.interface";
 
-
-export interface PaginatedIncome extends Page {
-    results: Income[];
+export interface PaginatedExpenses extends Page {
+    results: Expenses[];
   }
-  export interface Income {
+  export interface Expenses {
     id: number;
     user: string;
     date: string;
     particulars: string;
-    quantity: number;
     amount: number;
   }
   

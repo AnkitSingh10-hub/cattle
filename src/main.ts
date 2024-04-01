@@ -62,7 +62,7 @@ if (
 }
 
 /* Default title tag */
-const defaultDocumentTitle = "Admin One Vue";
+const defaultDocumentTitle = "CDR";
 
 /* Set document title from route meta */
 router.afterEach((to) => {

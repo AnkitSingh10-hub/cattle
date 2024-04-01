@@ -45,6 +45,14 @@ const routes: RouteRecordRaw[] = [
   },
   {
     meta: {
+      title: "ExpensesList",
+    },
+    path: "/expenses",
+    name: "expenses",
+    component: () => import("@/views/economic/ExpensesListView.vue"),
+  },
+  {
+    meta: {
       title: "Forms",
     },
     path: "/forms",

@@ -18,7 +18,7 @@
       <CardBox class="mb-6" has-table>
         <div class="q-pa-md">
 
-        <q-table :grid="$q.screen.xs" class="my-sticky-header-column-table" title="Income list" :rows="incomePaginationdata.results"
+        <q-table :grid="$q.screen.xs" class="my-sticky-header-column-table w-[100%]" title="Income list" :rows="incomePaginationdata.results"
           :columns="columns" row-key="name" @request="onRequest" :filter="filter" v-model:pagination="IncomePagination"
           separator="cell" square>
           <template v-slot:top-right>
@@ -199,6 +199,7 @@ const columns: Array<any> = [
   },
   
   { name: 'action', align: 'center', label: 'Action' },
+ 
  
 ]
 

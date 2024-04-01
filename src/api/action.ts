@@ -6,4 +6,5 @@ export enum Action {
 
 
   Income ='economic/income',
+  Expenses ='economic/expenses',
 }

@@ -39,10 +39,3 @@ export interface Register {
   municipality?: null;
   country : string;
 }
-
-export enum UserTypes {
-  Admin = "admin",
-  Farmer = "farmer",
-  Client = "client"
-}
-

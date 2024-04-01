@@ -34,11 +34,7 @@ const menuAside: MenuItem[] = [
     label: "Tables",
     icon: mdiTable,
   },
-  {
-    to: "/income",
-    label: "Income List",
-    icon: mdiCurrencyUsd,
-  },
+  
   {
     to: "/forms",
     label: "Forms",
@@ -75,14 +71,16 @@ const menuAside: MenuItem[] = [
     icon: mdiAlertCircle,
   },
   {
-    label: "Dropdown",
-    icon: mdiViewList,
+    label: "Economic",
+    icon: mdiCurrencyUsd,
     menu: [
       {
-        label: "Item One",
+        to: "/income",
+        label: "Income",
       },
       {
-        label: "Item Two",
+        to: "/expenses",
+        label: "Expenses",
       },
     ],
   },
