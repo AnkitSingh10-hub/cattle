@@ -10,7 +10,7 @@ import { Quasar, Notify, Dialog, LocalStorage } from "quasar"; // Import Quasar 
 import "./css/main.css";
 
 import '@quasar/extras/material-icons/material-icons.css'
-import 'quasar/dist/quasar.css';
+import 'quasar/src/css/index.sass'
 
 // Import Quasar css
 /* Init Pinia */
