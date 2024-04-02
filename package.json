@@ -17,6 +17,7 @@
     "@vee-validate/rules": "^4.12.4",
     "axios": "^1.2.2",
     "chart.js": "^4.1.2",
+    "flowbite": "^2.3.0",
     "jwt-decode": "^4.0.0",
     "numeral": "^2.0.6",
     "pinia": "^2.0.28",

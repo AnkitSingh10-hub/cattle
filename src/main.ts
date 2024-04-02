@@ -8,9 +8,9 @@ import { darkModeKey, styleKey } from "@/config";
 import './vee.validate'
 import { Quasar, Notify, Dialog, LocalStorage } from "quasar"; // Import Quasar components
 import "./css/main.css";
+import 'quasar/src/css/index.sass';
 
 import '@quasar/extras/material-icons/material-icons.css'
-import 'quasar/src/css/index.sass'
 
 // Import Quasar css
 /* Init Pinia */
