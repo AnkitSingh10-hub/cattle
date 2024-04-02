@@ -11,7 +11,8 @@ import {
   mdiResponsive,
   mdiPalette,
   mdiCurrencyUsd,
-  mdiCup
+  mdiCup,
+  mdiCow
 } from "@mdi/js";
 
 export interface MenuItem {
@@ -30,11 +31,18 @@ const menuAside: MenuItem[] = [
     icon: mdiMonitor,
     label: "Dashboard",
   },
+  
   {
     to: "/tables",
     label: "Tables",
     icon: mdiTable,
   },
+  {
+    to: "/animal",
+    label: "Animal",
+    icon: mdiCow,
+  },
+  
   {
     label: "Economic",
     icon: mdiCurrencyUsd,

@@ -35,6 +35,7 @@ const routes: RouteRecordRaw[] = [
     name: "tables",
     component: () => import("@/views/TablesView.vue"),
   },
+
   {
     meta: {
       title: "IncomeList",
@@ -75,6 +76,15 @@ const routes: RouteRecordRaw[] = [
     name: "milk_content",
     component: () => import("@/views/analysis/MilkContentList.vue"),
   },
+  {
+    meta: {
+      title: "Animal",
+    },
+    path: "/animal",
+    name: "animal",
+    component: () => import("@/views/animal/AnimalList.vue"),
+  },
+
   {
     meta: {
       title: "Forms",

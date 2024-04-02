@@ -5,11 +5,14 @@ export enum Action {
   ClearToken = 'token/clear',
 
 
-  Income ='economic/income',
-  Expenses ='economic/expenses',
+  Income ='income',
+  Expenses ='expenses',
 
   
-  MilkProduction ='analysis/milk-production',
-  MilkContent ='analysis/milk-content',
-  MilkSold ='analysis/milk-sold',
+  MilkProduction ='milk-production',
+  MilkContent ='milk-content',
+  MilkSold ='milk-sold',
+
+
+  Animal = 'animal'
 }
