@@ -14,7 +14,7 @@ export const useMilkContentStore = defineStore({
       sortBy: 'registered_date',
       descending: true,
       page: 1,
-      rowsPerPage: 10,
+      rowsPerPage: 5,
       rowsNumber: 1
     } as QTablePagination
   }),
