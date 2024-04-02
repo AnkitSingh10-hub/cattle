@@ -44,14 +44,7 @@ const routes: RouteRecordRaw[] = [
     name: "income",
     component: () => import("@/views/economic/IncomeListView.vue"),
   },
-  {
-    meta: {
-      title: "IncomeUpdate",
-    },
-    path: "/income-update",
-    name: "income_update",
-    component: () => import("@/views/economic/IncomeUpdateView.vue"),
-  },
+  
   {
     meta: {
       title: "ExpensesList",
