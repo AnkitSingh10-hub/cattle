@@ -6,6 +6,9 @@ export enum Action {
 
 
   Income ='income',
+  IncomeDetail = 'income/<id>',
+  IncomeDelete = 'income/<id>',
+
   Expenses ='expenses',
 
   
@@ -14,5 +17,6 @@ export enum Action {
   MilkSold ='milk-sold',
 
 
-  Animal = 'animal'
+  Animal = 'animal',
+  AnimalDelete = 'animal/<id>',
 }

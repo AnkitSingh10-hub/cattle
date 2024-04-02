@@ -1,4 +1,4 @@
-import { getAPI } from '.'
+import { getAPI, deleteAPI } from '.'
 import { Action } from './action'
 import { pathReplacer } from '../utils/router.utils'
 
@@ -11,6 +11,12 @@ export default new (class ExpensesAPI {
 
   public async getExpenses(query = '') {
     const response = await getAPI(Action.Expenses, query)
+    return response
+  }
+
+  async deleteExpenses(id: number) {
+    const url = pathReplacer(Action.IncomeDelete, [{ name: '<id>', value: id }])
+    const response = await deleteAPI(url)
     return response
   }
  

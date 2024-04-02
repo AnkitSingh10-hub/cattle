@@ -36,7 +36,12 @@ export const useIncomeStore = defineStore({
       const response = await API.getdetailIncome(id)
       this.IncomeDetail = response
       return response
-    }
-   
+    },
+
+    
+    async deleteIncome(id: number) {
+      const response = await API.deleteIncome(id)
+      return response
+    },
   }
 })

@@ -28,8 +28,7 @@
                 :to="{ name: 'farmer-detail', params: { id: props.row.id } }" />
               <q-btn no-caps size="12px" flat color="orange" icon="edit"
                 :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
-                <q-btn no-caps size="12px" flat color="red" icon="delete"
-                :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
+                <q-btn no-caps size="12px" flat color="red" icon="delete" @click="confirm=true; row_id=props.row.id" />
                 
             </q-td>
           </template>
@@ -60,6 +59,19 @@
       {{ checkedRow.name }}
     </span>
   </div>
+  <q-dialog v-model="confirm" persistent>
+      <q-card>
+        <q-card-section class="row items-center">
+          <q-avatar icon="delete_forever" color="red" text-color="white" />
+          <span class="q-ml-sm">Are you sure you want to delete ?</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="No" color="primary" v-close-popup />
+          <q-btn flat label="Yes" @click="deleteAnimal(row_id)" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
 </CardBox>
     </SectionMain>
   </LayoutAuthenticated>
@@ -84,7 +96,7 @@ import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.
 import BaseButton from "@/components/BaseButton.vue";
 import CardBoxComponentEmpty from "@/components/CardBoxComponentEmpty.vue";
 import type { Clients } from "@/stores/main";
-import { computed, ref, onBeforeMount } from "vue";
+import { computed, ref, onBeforeMount, popScopeId } from "vue";
 import { useMainStore } from "@/stores/main";
 import { mdiEye, mdiTrashCan } from "@mdi/js";
 import CardBoxModal from "@/components/CardBoxModal.vue";
@@ -98,6 +110,9 @@ import type { QTablePagination } from '../../models/page.interface'
 import type { PaginatedAnimal } from '../../models/Animal.interface'
 import '../../styles/tablelist.sass'
 
+const confirm = ref(false)
+
+const row_id = ref()
 
 const AnimalStore = useAnimalStore()
 
@@ -145,6 +160,16 @@ const onRequest = async (props: any): Promise<void> => {
   }
 }
 
+const deleteAnimal = async (id: number) => {
+  try {
+    await AnimalStore.deleteAnimal(id);
+  
+    onRequest({ pagination: AnimalPagination.value, filter: filter.value });
+  } catch (error) {
+    console.error('Error deleting income:', error);
+  }
+};
+
 const columns: Array<any> = [
   {
     name: 'sn',
@@ -165,11 +190,18 @@ const columns: Array<any> = [
     field: 'owner',
     sortable: true
   },
+  {
+    name: 'Id',
+    align: 'center',
+    label: 'Id',
+    field: 'animal_code',
+    sortable: true
+  },
   
   {
-    name: 'DOB',
+    name: 'Dateofbirth',
     align: 'center',
-    label: 'DOB',
+    label: 'Date of birth',
     field: 'dob',
     sortable: true
   },

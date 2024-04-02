@@ -29,14 +29,17 @@ export const useAnimalStore = defineStore({
       const query = queryBuilder(params as Query)
       const animal = (await API.getAnimal(query)) as PaginatedAnimal
       this.PaginatedAnimal = animal
-    },
- 
+    }, 
 
     async getdetailFarmer(id: number) {
       const response = await API.getdetailAnimal(id)
       this.AnimalDetail = response
       return response
-    }
+    },
+    async deleteAnimal(id: number) {
+      const response = await API.deleteAnimal(id)
+      return response
+    },
    
   }
 })

@@ -36,7 +36,13 @@ export const useExpensesStore = defineStore({
       const response = await API.getdetailExpenses(id)
       this.ExpensesDetail = response
       return response
-    }
+    },
+
+     
+    async deleteExpenses(id: number) {
+      const response = await API.deleteExpenses(id)
+      return response
+    },
    
   }
 })

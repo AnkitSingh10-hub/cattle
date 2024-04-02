@@ -24,10 +24,12 @@
 
           <template v-slot:body-cell-action="props">
             <q-td key="action" :props="props">
-              <q-btn no-caps size="12px" flat color="green" icon="visibility"
+              <q-btn no-caps size="12px" flat color="blue-6" icon="visibility"
                 :to="{ name: 'farmer-detail', params: { id: props.row.id } }" />
-              <q-btn no-caps size="12px" flat color="green" icon="manage_accounts"
+              <q-btn no-caps size="12px" flat color="orange" icon="edit"
                 :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
+                <q-btn no-caps size="12px" color="red" flat @click="confirm = true; row_id=props.row.id"  icon="delete"/>
+
             </q-td>
           </template>
         </q-table>
@@ -57,6 +59,21 @@
       {{ checkedRow.name }}
     </span>
   </div>
+
+  <q-dialog v-model="confirm" persistent>
+      <q-card>
+        <q-card-section class="row items-center">
+          <q-avatar icon="delete_forever" color="red" text-color="white" />
+          <span class="q-ml-sm">Are you sure you want to delete ?</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="No" color="primary" v-close-popup />
+          <q-btn flat label="Yes" @click="deleteIncome(row_id)" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
 </CardBox>
     </SectionMain>
   </LayoutAuthenticated>
@@ -116,6 +133,7 @@ onBeforeMount(() => {
 
 const loading = ref(false)
 const filter = ref('')
+const row_id = ref()
 
 const onRequest = async (props: any): Promise<void> => {
   const { page, rowsPerPage, sortBy, descending } = props.pagination
@@ -197,6 +215,16 @@ const columns: Array<any> = [
 ]
 
 
+const deleteIncome = async (id: number) => {
+  try {
+    await IncomeStore.deleteIncome(id);
+  
+    onRequest({ pagination: IncomePagination.value, filter: filter.value });
+  } catch (error) {
+    console.error('Error deleting income:', error);
+  }
+};
+
 
 const mainStore = useMainStore();
 
@@ -218,6 +246,9 @@ const itemsPaginated = computed(() =>
     perPage.value * (currentPage.value + 1)
   )
 );
+
+const confirm = ref(false)
+
 
 const numPages = computed(() => Math.ceil(items.value.length / perPage.value));
 

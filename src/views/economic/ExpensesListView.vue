@@ -24,10 +24,12 @@
   
             <template v-slot:body-cell-action="props">
               <q-td key="action" :props="props">
-                <q-btn no-caps size="12px" flat color="green" icon="visibility"
-                  :to="{ name: 'farmer-detail', params: { id: props.row.id } }" />
-                <q-btn no-caps size="12px" flat color="green" icon="manage_accounts"
-                  :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
+                <q-btn no-caps size="12px" flat color="blue-6" icon="visibility"
+                :to="{ name: 'farmer-detail', params: { id: props.row.id } }" />
+              <q-btn no-caps size="12px" flat color="orange" icon="edit"
+                :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
+                <q-btn no-caps size="12px" color="red" flat @click="confirm = true; row_id=props.row.id"  icon="delete"/>
+
               </q-td>
             </template>
           </q-table>
@@ -56,7 +58,26 @@
       >
         {{ checkedRow.name }}
       </span>
+
+
+
+
+     
+
     </div>
+    <q-dialog v-model="confirm" persistent>
+      <q-card>
+        <q-card-section class="row items-center">
+          <q-avatar icon="delete_forever" color="red" text-color="white" />
+          <span class="q-ml-sm">Are you sure you want to delete ?</span>
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="No" color="primary" v-close-popup />
+          <q-btn flat label="Yes" @click="deleteExpenses(row_id)" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </CardBox>
       </SectionMain>
     </LayoutAuthenticated>
@@ -95,6 +116,9 @@
   import type { PaginatedExpenses } from '../../models/Expenses.interface'
   import '../../styles/tablelist.sass'
   
+  const confirm = ref(false)
+
+  const row_id = ref()
   
   const ExpensesStore = useExpensesStore()
   
@@ -189,6 +213,20 @@
    
    
   ]
+
+  
+
+const deleteExpenses = async (id: number) => {
+  try {
+    await ExpensesStore.deleteExpenses(id);
+  
+    onRequest({ pagination: ExpensesPagination.value, filter: filter.value });
+  } catch (error) {
+    console.error('Error deleting expenses:', error);
+  }
+};
+
+
   
   
   

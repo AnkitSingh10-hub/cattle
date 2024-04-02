@@ -24,11 +24,14 @@
   
             <template v-slot:body-cell-action="props">
               <q-td key="action" :props="props">
-                <q-btn no-caps size="12px" flat color="green" icon="visibility"
-                  :to="{ name: 'farmer-detail', params: { id: props.row.id } }" />
-                <q-btn no-caps size="12px" flat color="green" icon="manage_accounts"
-                  :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
-              </q-td>
+                <q-btn no-caps size="12px" flat color="blue-6" icon="visibility"
+                :to="{ name: 'farmer-detail', params: { id: props.row.id } }" />
+                <q-btn no-caps size="12px" @click="isModalActive = true" flat color="orange" icon="edit"
+                :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
+                <q-btn no-caps size="12px" @click="isModalDangerActive = true" flat color="red" icon="delete"
+                :to="{ name: 'usersregisteredplantlist', params: { id: props.row.id } }" />
+                
+              </q-td> 
             </template>
           </q-table>
         </div>
