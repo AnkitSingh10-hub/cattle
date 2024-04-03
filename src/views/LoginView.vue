@@ -11,7 +11,7 @@
             autocomplete="current-password" />
         </FormField>
 
-        <FormCheckRadio v-model="form.remember" name="remember" label="Remember" :input-value="true" />
+        <!-- <FormCheckRadio v-model="form.remember" name="remember" label="Remember" :input-value="true" /> -->
 
         <template #footer>
           <BaseButtons>
@@ -41,11 +41,7 @@ import { useJwtStore } from "@/stores/jwt";
 import { useQuasar } from 'quasar'
 import type { UserLoginInfo } from '@/models/JWT.interface'
 
-const form = reactive({
-  login: "",
-  pass: "",
-  remember: true,
-});
+
 
 
 const $q = useQuasar()

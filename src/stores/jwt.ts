@@ -13,7 +13,7 @@ export const useJwtStore = defineStore('token', {
       AccessToken: '',
       DecodedPayload: {} as DecodedJWTPayload,
       isLoggedIn: false,
-      RefreshingToken: false,
+      RefreshingToken: true,
       UserDetail: {} as UserDetail
     }
   },
