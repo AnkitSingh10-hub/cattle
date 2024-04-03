@@ -1,6 +1,7 @@
 <template>
   <q-input
   square
+  
     v-bind="$attrs"
     v-model="syncValue"
     :error-message="errorMessage"
