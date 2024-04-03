@@ -8,11 +8,8 @@
         <Form ref="observer" v-slot="{ handleSubmit }">
           <form @submit.prevent="handleSubmit(onSubmit)">
             <q-btn no-caps class="register-button" label="Register" type="submit" />
-            <UsernameLoginInput label="Select country" lazy-rules rules="email|required" />
-            <qv-input outlined label="Please enter an email" custom-label-name="Email" color="green" lazy-rules
+            <qv-input outlined label="Please enter an email" custom-label-name="Email" color="blue" lazy-rules
               qv-validate="email|required" />
-
-              <EmailInput label="Select country" lazy-rules rules="email|required"/>
 
           </form>
         </Form>
@@ -89,7 +86,6 @@ import SectionTitle from "@/components/SectionTitle.vue";
 import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue";
 import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue";
 import NotificationBarInCard from "@/components/NotificationBarInCard.vue";
-import TInput from "@/components/FormComponents/TailwindComponents/TInput.vue";
 import { Form } from 'vee-validate'
 import UsernameLoginInput from "@/components/FormComponents/LoginComponents/UsernameLoginInput.vue";
 import QvInput from "@/components/FormComponents/QvInput.vue";
