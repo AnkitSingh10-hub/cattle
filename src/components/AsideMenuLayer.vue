@@ -49,7 +49,7 @@ const asideLgCloseClick = (event: MouseEvent) => {
       </div>
 
 
-      <q-scroll-area style="height: 519px; max-width: 300px;">
+      <q-scroll-area style="height: 487px; max-width: 300px;">
         <div class="q-pa-xs">
           <AsideMenuList :menu="menu" @menu-click="menuClick" />
         </div>
