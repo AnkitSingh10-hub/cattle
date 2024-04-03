@@ -1,10 +1,11 @@
 <template>
   <q-input
+  square
     v-bind="$attrs"
     v-model="syncValue"
     :error-message="errorMessage"
     :error="!!errorMessage"
-    :placeholder="props.label"
+    :label="props.label"
     class="focus:ring-0"  
     :class="{
       'q-field--required': props.qvValidate && props.qvValidate.includes('required')
