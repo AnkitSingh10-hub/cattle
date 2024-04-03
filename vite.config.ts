@@ -17,6 +17,9 @@ export default (data: any) => {
         template: { transformAssetUrls }
       }),
       vueJsx(),
+      quasar({
+        sassVariables: 'src/styles/quasar-variables.sass'
+      })
       
     ],
     build: {

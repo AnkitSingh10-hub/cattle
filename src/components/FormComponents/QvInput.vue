@@ -5,10 +5,11 @@
     :error-message="errorMessage"
     :error="!!errorMessage"
     :placeholder="props.label"
+    class="focus:ring-0"  
     :class="{
       'q-field--required': props.qvValidate && props.qvValidate.includes('required')
     }"
-  >
+     >
     <template v-for="(_, slot) of slots" :key="slot" v-slot:[slot]="scope">
       <slot v-if="scope" :name="slot" v-bind="scope" />
       <slot v-else :name="slot" />

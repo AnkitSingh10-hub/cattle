@@ -96,6 +96,14 @@ const routes: RouteRecordRaw[] = [
   },
   {
     meta: {
+      title: "TInput",
+    },
+    path: "/tinput",
+    name: "tinput",
+    component: () => import("@/views/FormsView2.vue"),
+  },
+  {
+    meta: {
       title: "Profile",
     },
     path: "/profile",
