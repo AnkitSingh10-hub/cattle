@@ -4,7 +4,7 @@
       <input
         v-bind="$attrs"
         v-model="syncValue"
-        :class="{'error-input': errorMessage,'focus:ring-': errorMessage}"
+        :class="{'error-input': errorMessage,'focus:ring-0': errorMessage}"
       />
       <p
       id="outlined_error"
