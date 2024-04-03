@@ -72,4 +72,13 @@ onMounted(() => {
   }
 })
 </script>
-<style scoped></style>
+<style scoped>
+
+
+:deep(.q-field__native){
+  box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color)
+}
+
+
+</style>
+

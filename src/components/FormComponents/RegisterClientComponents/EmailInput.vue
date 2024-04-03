@@ -9,6 +9,7 @@
       <p
       id="outlined_error"
       :class="{'error':errorMessage}"
+      class="transition-opacity duration-1000 ease-in-out"
     >
       {{ errorMessage }}
     </p>  

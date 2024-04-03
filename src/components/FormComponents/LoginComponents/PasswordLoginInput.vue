@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-  import {defineEmits, defineProps, onMounted, computed, ref, toValue} from 'vue'
+  import {defineEmits, defineProps, onMounted, computed} from 'vue'
   import { useField} from 'vee-validate'
   const emit = defineEmits(['update:modelValue'])
   const props = defineProps({
