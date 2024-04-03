@@ -4,7 +4,7 @@
           :columns="columns" row-key="name" @request="onRequest" :filter="filter" v-model:pagination="IncomePagination"
           separator="cell" square>
           <template v-slot:top-right>
-            <q-input borderless dense debounce="300" v-model="filter" placeholder="Search by Name" class="input-style">
+            <q-input borderless dense debounce="300" v-model="filter" placeholder="Search by Name">
               <template v-slot:append>
                 <q-icon name="search" />
               </template>
@@ -45,7 +45,6 @@ import type { QTablePagination } from '../../models/page.interface'
 import type { PaginatedIncome } from '../../models/Income.interface'
 import '../../styles/tablelist.sass'
 import { computed, ref, onBeforeMount } from "vue";
-
 const confirm = ref(false)
 
 const IncomeStore = useIncomeStore()
@@ -164,3 +163,8 @@ const deleteIncome = async (id: number) => {
 
 </script>
 
+<style scoped>
+:deep(.q-field__native){
+    box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color)
+  }
+</style>
