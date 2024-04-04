@@ -60,8 +60,4 @@ const onSubmit = async (): Promise<void> => {
   router.push({ name: 'dashboard' })
 }
 
-
-const submit = () => {
-  router.push("/dashboard");
-};
 </script>
